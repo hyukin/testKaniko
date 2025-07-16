@@ -10,12 +10,12 @@ RUN wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.85/bin/apache-tomc
     mv apache-tomcat-9.0.85 /opt/tomcat && \
     chmod +x /opt/tomcat/bin/*.sh
 
-# ✅ JSP 및 WAR 파일 복사
-COPY hello.jsp /opt/tomcat/webapps/ROOT/hello.jsp
-COPY example.war /opt/tomcat/webapps/example.war
+# ✅ JSP 및 WAR 파일 복사 (경로 주의: GitHub 압축 해제 폴더 포함)
+COPY tomcat-kaniko-main/hello.jsp /opt/tomcat/webapps/ROOT/hello.jsp
+COPY tomcat-kaniko-main/example.war /opt/tomcat/webapps/example.war
 
 # ✅ 포트 58080으로 변경된 Tomcat 설정 복사
-COPY server.xml /opt/tomcat/conf/server.xml
+COPY tomcat-kaniko-main/server.xml /opt/tomcat/conf/server.xml
 
 # ✅ 포트 개방
 EXPOSE 58080
