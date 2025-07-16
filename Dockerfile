@@ -15,7 +15,7 @@ COPY testKaniko-main/hello.jsp /opt/tomcat/webapps/ROOT/hello.jsp
 # COPY testKaniko-main/example.war /opt/tomcat/webapps/example.war
 
 # ✅ 포트 58080으로 변경된 Tomcat 설정 복사
-COPY testKaniko-main/server.xml /opt/tomcat/conf/server.xml
+#COPY testKaniko-main/server.xml /opt/tomcat/conf/server.xml
 
 # ✅ 포트 개방
 EXPOSE 58080
